@@ -1,6 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const { Client } = require('line-messaging-api');
+const { Client } = require('@line/bot-sdk');
 const dialogflow = require('@google-cloud/dialogflow');
 const path = require('path');
 
@@ -16,8 +16,7 @@ const sessionClient = new dialogflow.SessionsClient({
   keyFilename: '/etc/secrets/key.json'
 });
 
-app.post('/webhook', async (req, res) => {
-  try {
+app.post('/webhook', async (req, res) => {  try {
     const events = req.body.events || [];
     const promises = events.map(async (event) => {
       if (event.type === 'message' && event.message.type === 'text') {

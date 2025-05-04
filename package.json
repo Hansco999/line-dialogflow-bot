@@ -11,6 +11,7 @@
   "description": "",
   "dependencies": {
     "@google-cloud/dialogflow": "^7.0.1",
+    "@line/bot-sdk": "^9.9.0",
     "body-parser": "^2.2.0",
     "express": "^5.1.0",
     "line-messaging-api": "^0.0.7"
